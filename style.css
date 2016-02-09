@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+}
+
+form {
+  color: #77b300;
+}
+
+input {
+  margin: 0 15px 25px 0;
+  max-width: 700px;
+}
+
+.electricblue {
+  background-color: #2a9fd6;
+}
+
+.edit:hover, .delete:hover, .sortHeads:hover {
+  cursor: pointer;
+}
+
+.edit:hover {
+  color: #0f0;
+}
+
+.delete:hover {
+  color: #f00;
+}
