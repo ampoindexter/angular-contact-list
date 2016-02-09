@@ -21,7 +21,8 @@ app.controller('mainCtrl', function($scope, $localStorage, $sessionStorage) {
 
   $scope.contacts = $scope.$storage.contacts;
 
-  $scope.editing = false
+  $scope.editing = false;
+  $scope.searching = false;
 
   $scope.addContact = function() {
     $scope.contacts.push($scope.newContact);
@@ -41,6 +42,10 @@ app.controller('mainCtrl', function($scope, $localStorage, $sessionStorage) {
     i = $scope.contacts.indexOf(contact);
   }
 
+  $scope.sortContact = function(key) {
+    $scope.sortText = $scope.sortText === key ? ('-' + key) : key;
+  }
+
   $scope.editContact = function() {
     var editedContact = {};
     editedContact.name = $('#editName').val();
@@ -49,5 +54,10 @@ app.controller('mainCtrl', function($scope, $localStorage, $sessionStorage) {
     $scope.contacts.splice(i, 1, editedContact);
     $scope.editing = !$scope.editing;
   }
+
+  $scope.showSearch = function() {
+    $scope.searching = !$scope.searching;
+  }
+
 });
 
