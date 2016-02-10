@@ -61,20 +61,20 @@
       </div>
       <button class="btn btn-warning" ng-click='showSearch()'>Search Contacts</button>
       <hr>
-      <table class="table table-hover" ng-if='contacts.length'>
+      <table class="table" ng-if='contacts.length'>
         <thead>
           <tr>
             <th>#</th>
-            <th ng-repeat='(key, value) in contacts[0]' class='sortHeads'>
+            <th ng-click='sortContact(key)' ng-repeat='(key, value) in contacts[0]' class='sortHeads'>
               {{key.toUpperCase()}}
-              <span ng-click='sortContact(key)' class='fa fa-caret-square-o-down'></span>
+              <span class='fa fa-caret-square-o-down'></span>
             </th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody id="contactList">
-          <tr ng-repeat='(key, contact) in contacts | filter:filterText | orderBy:sortText track by $index' ng-class='{electricblue: $even}'>
+          <tr ng-repeat='(key, contact) in contacts | filter:filterText | orderBy: sortText track by $index' ng-class='{electricblue: $even}'>
             <td>{{$index + 1}}</td>
             <td ng-repeat='value in contact'>{{value}}</td>
             <td class="edit" ng-click='startEdit(contact)'>
