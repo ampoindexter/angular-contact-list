@@ -19,12 +19,8 @@ input {
   cursor: pointer;
 }
 
-.sortHeads:hover {
+.sortHeads:hover, .edit:hover {
   color: #9933cc;
-}
-
-.edit:hover {
-  color: #0f0;
 }
 
 .delete:hover {

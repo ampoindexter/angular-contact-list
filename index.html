@@ -35,20 +35,20 @@
           </div>
           <button type="submit" class="btn btn-success">Add Contact</button>
         </form>
-        <form class="form-inline" ng-show='editing'>
+        <form class="form-inline" ng-show='editing' ng-submit='editContact()'>
           <div class="form-group">
             <label for="editName">Name:</label>
-            <input type="text" class="form-control" id='editName' ng-model='editedContact.name'>
+            <input type="text" class="form-control" id='editName' ng-model='editedContact.name' required>
           </div>
           <div class="form-group">
             <label for="editEmail">Email:</label>
-            <input type="email" class="form-control" id='editEmail' ng-model='editedContact.email'>
+            <input type="email" class="form-control" id='editEmail' ng-model='editedContact.email' required>
           </div>
           <div class="form-group">
             <label for="editPhone">Phone Number:</label>
-            <input type="tel" class="form-control" id='editPhone' ng-model='editedContact.phone'>
+            <input type="tel" class="form-control" id='editPhone' ng-model='editedContact.phone' required>
           </div>
-          <button type="submit" class="btn btn-info" ng-click='editContact()'>Save Contact</button>
+          <button type="submit" class="btn btn-info">Save Contact</button>
         </form>
         <form ng-show='searching'>
           <div class="form-group">
