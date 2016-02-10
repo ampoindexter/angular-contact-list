@@ -57,7 +57,7 @@
           </div>
         </form>
       </div>
-      <button class="btn btn-warning" ng-click='showSearch()'>Search Contacts</button>
+      <button class="btn btn-warning" ng-if='contacts.length' ng-click='showSearch()'>Search Contacts</button>
       <hr>
       <table class="table" ng-if='contacts.length'>
         <thead>
