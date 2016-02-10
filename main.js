@@ -34,16 +34,16 @@ app.controller('mainCtrl', function($scope, $localStorage, $sessionStorage) {
     $scope.contacts.splice(index, 1);
   }
 
+  $scope.sortContact = function(key) {
+    $scope.sortText = $scope.sortText === key ? ('-' + key) : key;
+  }
+
   $scope.startEdit = function(contact) {
     $scope.editing = !$scope.editing;
     $('#editName').val(contact.name);
     $('#editEmail').val(contact.email);
     $('#editPhone').val(contact.phone);
     i = $scope.contacts.indexOf(contact);
-  }
-
-  $scope.sortContact = function(key) {
-    $scope.sortText = $scope.sortText === key ? ('-' + key) : key;
   }
 
   $scope.editContact = function() {
